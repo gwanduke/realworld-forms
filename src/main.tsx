@@ -9,10 +9,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { Layout } from "./Layout";
-import {
-  TravelerInsuranceA,
-  TravelerInsuranceB,
-} from "./apps/TravelerInsurance";
+import TravelerInsurance from "./apps/TravelerInsurance";
 
 import "./index.css";
 import { AnimatePresence, motion } from "framer-motion";
@@ -25,10 +22,7 @@ const MyApp = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
-          <Route path="traveler-insurance">
-            <Route path="a" element={<TravelerInsuranceA />} />
-            <Route path="b" element={<TravelerInsuranceB />} />
-          </Route>
+          <Route path="traveler-insurance/*" element={<TravelerInsurance />} />
         </Route>
       </Routes>
     </AnimatePresence>
